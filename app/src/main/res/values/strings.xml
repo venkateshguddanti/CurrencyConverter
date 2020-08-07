@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string name="text_currency">Currency In: %s</string>
+    <string name="text_date">Date: %s</string>
+    <string name="text_app_bar">Search Currency</string>
+    <string name="text_enter_value">Enter value</string>
+</resources>
