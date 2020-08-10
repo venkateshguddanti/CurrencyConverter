@@ -19,6 +19,7 @@ class NetworkHelper(private val context: Context)
             {
                 activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)-> true
                 activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)-> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)-> true
                 else->false
             }
         }else
@@ -28,6 +29,7 @@ class NetworkHelper(private val context: Context)
                   result = when(type){
                       ConnectivityManager.TYPE_WIFI->true
                       ConnectivityManager.TYPE_MOBILE->true
+                      ConnectivityManager.TYPE_ETHERNET->true
                       else->false
                   }
               }
