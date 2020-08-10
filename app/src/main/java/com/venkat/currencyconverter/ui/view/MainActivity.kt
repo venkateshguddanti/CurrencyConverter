@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private val mainViewModel : MainViewModel by viewModel()
     private lateinit var adapter : CurrencyAdapter
-    private var input = BigDecimal(0)
+    private var input = BigDecimal(1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         if(Intent.ACTION_SEARCH == intent.action)
         {
             val searchValue = intent.getStringExtra(SearchManager.QUERY)
+            if(searchValue.toString() != ".")
             input = BigDecimal(searchValue)
         }
     }
@@ -129,9 +129,10 @@ class MainActivity : AppCompatActivity() {
             mainViewModel.exchangeRates.value?.data?.base)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+    override fun onResume() {
+        super.onResume()
+        mainViewModel.fetchExchangeRates()
     }
+
 
 }
