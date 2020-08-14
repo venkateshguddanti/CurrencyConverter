@@ -2,9 +2,9 @@ package com.venkat.currencyconverter.di.module
 
 import android.content.Context
 import com.venkat.currencyconverter.BuildConfig
-import com.venkat.currencyconverter.api.ApiHelper
-import com.venkat.currencyconverter.api.ApiHelperImpl
-import com.venkat.currencyconverter.api.ApiService
+import com.venkat.currencyconverter.domain.ApiHelper
+import com.venkat.currencyconverter.data.ApiHelperImpl
+import com.venkat.currencyconverter.domain.ApiService
 import com.venkat.currencyconverter.util.NetworkHelper
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext

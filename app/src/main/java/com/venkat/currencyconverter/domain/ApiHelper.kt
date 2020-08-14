@@ -1,4 +1,4 @@
-package com.venkat.currencyconverter.api
+package com.venkat.currencyconverter.domain
 
 import com.venkat.currencyconverter.model.ExchangeRates
 

@@ -15,7 +15,6 @@ class MainViewModel(private val mainRepository: MainRepository,
 {
      val exchangeRates = MutableLiveData<Resource<ExchangeRates>>()
 
-
     fun fetchExchangeRates() {
         viewModelScope.launch {
             exchangeRates.postValue(Resource.loading(null))

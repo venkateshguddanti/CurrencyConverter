@@ -84,10 +84,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun renderList(data: Map<String, BigDecimal>?,base : String?)
     {
-        if(input.equals(BigDecimal(0)))
-        {
-            return
-        }
         adapter.apply {
             dateLayout.visibility = View.VISIBLE
             baseCurrency.text = getString(R.string.text_currency,"$input $base")
